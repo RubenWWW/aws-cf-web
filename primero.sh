@@ -4,6 +4,8 @@ cd /home/ubuntu
 sudo git clone https://github.com/aws/efs-utils
 sudo git clone https://github.com/RubenWWW/aws-cf-web
 cd ./efs-utils/
+sudo chmod -x ./build-deb.sh
+sudo ./build-deb.sh
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install ./build/amazon-efs-utils*.deb -y
 sudo mkdir -p /var/www/html/efs
