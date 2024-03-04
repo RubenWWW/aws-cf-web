@@ -11,8 +11,8 @@ sudo apt install /home/ubuntu/efs-utils/build/amazon-efs-utils*.deb -y
 sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
 sudo rm /etc/apache2/sites-enabled/000-default.conf
-cd /home/ruben/aws-cf-web/
-sudo mv ./cosas.conf /etc/apache2/sites-enabled/000-default.conf
+cd /home/ubuntu/aws-cf-web/
+sudo mv /home/ubuntu/aws-cf-web/cosas.conf /etc/apache2/sites-enabled/000-default.conf
 sudo systemctl reload apache2
 
   
