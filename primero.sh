@@ -1,5 +1,5 @@
 #!/bin/bash -xe
-sudo apt install apache2 git binutils -y
+sudo apt install apache2 git binutils php libapache2-mod-php -y
 cd /home/ubuntu
 sudo git clone https://github.com/aws/efs-utils
 sudo git clone https://github.com/RubenWWW/aws-cf-web
