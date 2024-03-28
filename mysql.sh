@@ -13,8 +13,8 @@ sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
 
 sudo mysql <<MYSQL_SCRIPT
-CREATE DATABASE IF NOT EXISTS $DB_NAME;
-USE $DB_NAME;
+CREATE DATABASE IF NOT EXISTS wordpress;
+USE wordpress;
 CREATE USER 'rbn'@'%' IDENTIFIED BY 'informatica';
 GRANT ALL PRIVILEGES ON *.* TO 'rbn'@'%';
 FLUSH PRIVILEGES;
