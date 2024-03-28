@@ -27,20 +27,3 @@ sudo wp core download --allow-root --path=$PRIMARY_INSTALL_DIR
 sudo wp config create --allow-root --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD --path=$PRIMARY_INSTALL_DIR
 
 sudo wp core install --allow-root --url=127.0.0.1 --title="Ruben WordPress" --admin_user=admin --admin_password=informatica --admin_email=rubengzmn33@gmail.com --path=$PRIMARY_INSTALL_DIR
-
-sudo rm /etc/apache2/sites-enabled/000-default.conf
-echo "<VirtualHost *:80>
-	ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/html/efs/wordpress
-	<Directory /var/www/html/efs/wordpress
-		Options Indexes FollowSymLinks
-		AllowOverride All
-		Require all granted
-	</Directory>
-	DirectoryIndex index.php
-
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>" | sudo tee /etc/apache2/sites-available/000-default.conf
-
-sudo service apache2 restart
