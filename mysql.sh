@@ -28,4 +28,4 @@ sudo wp core download --allow-root --path="/var/www/html/efs"
 
 sudo wp config create --allow-root --dbname="wordpress" --dbuser="rbn" --dbpass="informatica" --path="/var/www/html/efs"
 
-sudo wp core install --allow-root --url=127.0.0.1 --title="Ruben WordPress" --admin_user=admin --admin_password=informatica --admin_email=rubengzmn33@gmail.com --path=$PRIMARY_INSTALL_DIR
+sudo wp core install --allow-root --url=172.31.80.12 --title="Ruben WordPress" --admin_user=admin --admin_password=informatica --admin_email=rubengzmn33@gmail.com --path="/var/www/html/efs"
