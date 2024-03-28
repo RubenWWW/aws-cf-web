@@ -1,10 +1,5 @@
 #!/bin/bash
 
-PRIMARY_INSTALL_DIR="/var/www/html/efs"
-DB_NAME="wordpress"
-DB_USER="rbn"
-DB_PASSWORD="informatica"
-
 sudo apt-get update
 sudo apt-get install -y mysql-server git php php-mysql curl
 
@@ -29,8 +24,8 @@ sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cl
 sudo chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 
-sudo wp core download --allow-root --path=$PRIMARY_INSTALL_DIR
+sudo wp core download --allow-root --path="/var/www/html/efs"
 
-sudo wp config create --allow-root --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD --path=$PRIMARY_INSTALL_DIR
+sudo wp config create --allow-root --dbname="wordpress" --dbuser="rbn" --dbpass="informatica" --path="/var/www/html/efs"
 
 sudo wp core install --allow-root --url=127.0.0.1 --title="Ruben WordPress" --admin_user=admin --admin_password=informatica --admin_email=rubengzmn33@gmail.com --path=$PRIMARY_INSTALL_DIR
