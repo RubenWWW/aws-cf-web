@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PRIMARY_INSTALL_DIR="/var/www/html/efs/wordpress"
+PRIMARY_INSTALL_DIR="/var/www/html/efs"
 DB_NAME="wordpress"
 DB_USER="rbn"
 DB_PASSWORD="informatica"
@@ -16,7 +16,6 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install /home/ubuntu/efs-utils/build/amazon-efs-utils*.deb -y
 sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
-sudo mkdir -p /var/www/html/efs/wordpress
 
 sudo mysql <<MYSQL_SCRIPT
 CREATE DATABASE IF NOT EXISTS $DB_NAME;
