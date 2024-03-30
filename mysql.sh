@@ -29,3 +29,8 @@ sudo wp core download --allow-root --path="/var/www/html/efs"
 sudo wp config create --allow-root --dbname="wordpress" --dbuser="rbn" --dbpass="informatica" --path="/var/www/html/efs"
 
 sudo wp core install --allow-root --url=172.31.80.12 --title="Ruben WordPress" --admin_user=admin --admin_password=informatica --admin_email=rubengzmn33@gmail.com --path="/var/www/html/efs"
+
+sudo rm /etc/mysql/conf.d/mysqld.cnf
+sudo mv /aws-cf-web/mysqld.cnf /etc/mysql/conf.d/mysqld.cnf
+
+sudo systemctl restart mysql
