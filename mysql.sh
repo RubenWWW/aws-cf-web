@@ -33,4 +33,7 @@ sudo wp core install --allow-root --url=172.31.80.12 --title="Ruben WordPress" -
 sudo rm /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo mv /aws-cf-web/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
+sudo rm /var/www/html/efs/wp-config.php
+sudo mv /aws-cf-web/wp-config.php /var/www/html/efs/wp-config.php
+
 sudo systemctl restart mysql
