@@ -3,7 +3,7 @@
 sudo apt-get update -y
 sudo apt-get install -y mysql-server git php php-mysql curl
 
-sudo git clone https://github.com/aws/efs-utils
+sudo git clone https://github.com/aws/efs-utils /home/ubuntu/efs-utils
 cd /home/ubuntu/efs-utils/
 sudo chmod +x /home/ubuntu/efs-utils/build-deb.sh
 sudo ./build-deb.sh
