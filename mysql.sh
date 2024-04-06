@@ -43,7 +43,7 @@ sudo mkdir -p /home/ubuntu/cli
 sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/home/ubuntu/cli/awscliv2.zip"
 
 cd /home/ubuntu/cli
-unzip -u awscliv2.zip
+sudo unzip -u awscliv2.zip
 
 sudo ./aws/install
 
