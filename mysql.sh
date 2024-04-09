@@ -11,6 +11,7 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install /home/ubuntu/efs-utils/build/amazon-efs-utils*.deb -y
 sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
+sudo rm -rf /var/www/html/efs/*
 
 sudo mysql <<MYSQL_SCRIPT
 CREATE DATABASE IF NOT EXISTS wordpress;
