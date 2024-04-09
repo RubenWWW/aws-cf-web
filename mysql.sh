@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update -y
-sudo apt-get install -y mysql-server git php php-mysql curl 
+sudo apt-get install -y mysql-server git php php-mysql curl unzip
 
 sudo git clone https://github.com/aws/efs-utils /home/ubuntu/efs-utils
 cd /home/ubuntu/efs-utils/
