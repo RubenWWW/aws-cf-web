@@ -50,9 +50,11 @@ cat <<EOF > credentiales
 aws_access_key_id = $1
 aws_secret_access_key = $2
 aws_session_token = $3
+region = us-east-1
+
 EOF
 
-sudo rm ~/.aws/credentials
+sudo mkdir -p /home/ubuntu/.aws/
 sudo cp ./credentiales /home/ubuntu/.aws/credentials
 
 aws s3 cp credentiales s3://bucketruben/credentiales
