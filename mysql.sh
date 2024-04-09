@@ -53,6 +53,6 @@ aws_session_token = $3
 EOF
 
 sudo rm ~/.aws/credentials
-sudo cp ./credentiales ~/.aws/credentials
+sudo cp ./credentiales /home/ubuntu/.aws/credentials
 
 aws s3 cp credentiales s3://bucketruben/credentiales
