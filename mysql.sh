@@ -37,3 +37,21 @@ sudo rm /var/www/html/efs/wp-config.php
 sudo mv /aws-cf-web/wp-config.php /var/www/html/efs/wp-config.php
 
 sudo systemctl restart mysql
+
+cd /home/ubuntu
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip -u awscliv2.zip
+sudo ./aws/install
+
+cat <<EOF > credentiales
+[default]
+aws_access_key_id = $1
+aws_secret_access_key = $2
+aws_session_token = $3
+EOF
+
+sudo rm ~/.aws/credentials
+sudo cp ./credentiales ~/.aws/credentials
+
+aws s3 cp credentiales s3://bucketruben/credentiales
