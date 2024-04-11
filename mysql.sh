@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update -y
-sudo apt-get install -y mysql-server git php php-mysql curl unzip
+sudo apt-get install -y mysql-server git php php-mysql curl unzip tar
 
 sudo git clone https://github.com/aws/efs-utils /home/ubuntu/efs-utils
 cd /home/ubuntu/efs-utils/
@@ -45,6 +45,8 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip -u awscliv2.zip
 sudo ./aws/install
 
+tar -cvf /home/ubuntu/backup.tar /var/www/html/efs
+
 cat <<EOF > credentiales
 [default]
 aws_access_key_id = $1
@@ -57,4 +59,4 @@ EOF
 sudo mkdir -p /home/ubuntu/.aws/
 sudo cp ./credentiales /home/ubuntu/.aws/credentials
 
-aws s3 cp credentiales s3://bucketruben/credentiales
+aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
