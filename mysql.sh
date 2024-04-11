@@ -41,11 +41,11 @@ sudo systemctl restart mysql
 
 cd /home/ubuntu
 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip -u awscliv2.zip
+sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo unzip -u awscliv2.zip
 sudo ./aws/install
 
-tar -cvf /home/ubuntu/backup.tar /var/www/html/efs
+sudo tar -cvf /home/ubuntu/backup.tar /var/www/html/efs
 
 cat <<EOF > credentiales
 [default]
