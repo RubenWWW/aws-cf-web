@@ -59,4 +59,5 @@ EOF
 sudo mkdir -p /home/ubuntu/.aws/
 sudo cp /home/ubuntu/credentiales /home/ubuntu/.aws/credentials
 
-aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
+AWS_SHARED_CREDENTIALS_FILE=/home/ubuntu/.aws/credentials aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
+
