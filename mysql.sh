@@ -57,6 +57,6 @@ region = us-east-1
 EOF
 
 sudo mkdir -p /home/ubuntu/.aws/
-sudo cp ./credentiales /home/ubuntu/.aws/credentials
+sudo cp /home/ubuntu/credentiales /home/ubuntu/.aws/credentials
 
 aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
