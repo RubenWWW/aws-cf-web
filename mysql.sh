@@ -62,5 +62,7 @@ EOF
 sudo mkdir -p /home/ubuntu/.aws/
 sudo cp /home/ubuntu/credentiales /home/ubuntu/.aws/credentials
 
-AWS_SHARED_CREDENTIALS_FILE=/home/ubuntu/.aws/credentials aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
+sudo mysqldump -u rbn -pinformatica wordpress > /home/ubuntu/backup/backup.sql 2>>/dev/null 
 
+AWS_SHARED_CREDENTIALS_FILE=/home/ubuntu/.aws/credentials aws s3 cp /home/ubuntu/backup.tar s3://bucketruben/backup.tar
+AWS_SHARED_CREDENTIALS_FILE=/home/ubuntu/.aws/credentials aws s3 cp /home/ubuntu/backup/backup.sql s3://bucketruben/backup.sql
