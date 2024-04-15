@@ -13,6 +13,9 @@ sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
 sudo rm -rf /var/www/html/efs/*
 
+sudo mkdir -p /home/ubuntu/backup
+sudo mount -t efs fs-03e480e8c595adcea:/ /home/ubuntu/backup
+
 sudo mysql <<MYSQL_SCRIPT
 CREATE DATABASE IF NOT EXISTS wordpress;
 USE wordpress;
