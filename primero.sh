@@ -1,13 +1,14 @@
 #!/bin/bash -xe
-sudo apt install apache2 git binutils php libapache2-mod-php php-mysql -y
+sudo apt install apache2 git binutils php libapache2-mod-php php-mysql rustc cargo pkg-config libssl-dev -y
 cd /home/ubuntu
 sudo git clone https://github.com/aws/efs-utils
 sudo git clone https://github.com/RubenWWW/aws-cf-web
 cd /home/ubuntu/efs-utils/
 sudo chmod +x /home/ubuntu/efs-utils/build-deb.sh
-sudo ./build-deb.sh
+sudo ./build-deb.sh 
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install /home/ubuntu/efs-utils/build/amazon-efs-utils*.deb -y
+sudo apt-get -y install ./build/amazon-efs-utils*deb
+
 sudo mkdir -p /var/www/html/efs
 sudo mount -t efs fs-0bf28a27f5898b2ed:/ /var/www/html/efs
 sudo rm /etc/apache2/sites-enabled/000-default.conf
